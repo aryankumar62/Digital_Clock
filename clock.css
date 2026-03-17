@@ -1,0 +1,74 @@
+:root {
+      --bg: #0a0a0f;
+      --gold: #c9a84c;
+      --gold-dim: #7a621e;
+      --cream: #f0e6cc;
+      --glow: rgba(201, 168, 76, 0.4);
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    body {
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Share Tech Mono', monospace;
+      overflow: hidden;
+    }
+ 
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url(Copilot_20260317_154023.png);
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.4;
+    }
+ 
+    .scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+ 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+ 
+    .label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 21px;
+      letter-spacing: 6px;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+    }
+ 
+    .digital-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .digital-time {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 200px;
+      letter-spacing: 6px;
+      color: var(--cream);
+      text-shadow: 0 0 20px var(--gold), 0 0 40px var(--glow);
+    }
+ 
+    .digital-date {
+      font-size: 40px;
+      letter-spacing: 4px;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+    }
